@@ -1,0 +1,264 @@
+import type { FaqItem } from "./faq-home";
+
+export type LocalPageData = {
+  slug: string;
+  place: string;
+  metaTitle: string;
+  metaDescription: string;
+  kicker: string;
+  h1: string;
+  lead: string;
+  sections: { heading?: string; paragraphs: string[] }[];
+  images: { src: string; alt: string }[];
+  faq: FaqItem[];
+  areaServed: string[];
+};
+
+export const featuredReview = {
+  text: "Werkt professioneel en correct. Zeer stipt en komt afspraken volledig na. Goede kwaliteit met aandacht voor orde en netheid. Beslist aan te bevelen!",
+  date: "12/02/26",
+  name: "Steve V.",
+};
+
+export const bredenePage: LocalPageData = {
+  slug: "schilder-bredene",
+  place: "Bredene",
+  metaTitle: "Schilder Bredene | Schilderwerken aan de kust",
+  metaDescription:
+    "Schilder in Bredene voor rijwoningen en appartementen. Schilderwerken in Bredene, Oudenburg en omgeving. Snel ter plaatse vanuit Oostende.",
+  kicker: "Schilderwerken · Bredene",
+  h1: "Schilder in Bredene",
+  lead:
+    "Ik ben je schilder in Bredene, op een kwartiertje vanuit Oostende. Schilderwerken in Bredene doe ik vaak in rijwoningen en appartementen, en meestal kan ik binnen enkele dagen langskomen.",
+  sections: [
+    {
+      paragraphs: [
+        "Bredene ligt vlak bij mijn thuisbasis. Geen grote ploeg, geen tussenpersoon: je belt mij, ik kom langs en ik schilder zelf. Voor een trap, een slaapkamer of een volledige woning. De lijnen zijn kort.",
+        "Ik rij dagelijks door de gemeente, van de dorpskern tot de woonwijken richting de duinen. Een plaatsbezoek plan ik meestal binnen de week. Voor kleinere klussen vind ik vaak sneller een gaatje dan een bedrijf van verder weg.",
+      ],
+    },
+    {
+      heading: "Schilderwerken in rijwoningen",
+      paragraphs: [
+        "In Bredene staan veel rijwoningen met smalle trappenhuizen. Ik werk kamer per kamer, stofarm en ruim elke avond op. Je hoeft de woning niet te verlaten.",
+        "In appartementen let ik op de lift, de gemeenschappelijke delen en de buren. Alles gaat afgedekt voordat ik begin. Zo blijft het gebouw netjes en heb je geen gedoe achteraf.",
+      ],
+    },
+    {
+      heading: "Ook in Oudenburg en de dorpen eromheen",
+      paragraphs: [
+        "Naast Bredene kom ik ook in Oudenburg, Ettelgem, Westkerke en Zuienkerke. Bakstenen gevels, landelijke woningen, recente nieuwbouw. Ik pas de verf aan op de ondergrond.",
+        "Ettelgem en Westkerke liggen op een korte rit. Zuienkerke ook. Je hoeft geen aparte schilder per dorp te zoeken.",
+      ],
+    },
+    {
+      heading: "Binnen en buiten",
+      paragraphs: [
+        "Binnenschilderwerk, buitenschilderwerk, ramen, deuren, gevels. Aan de kust gebruik ik verf die tegen zeelucht kan. Houtrot herstel ik eerst. Anders heeft schilderen weinig zin.",
+        "Ik kom gratis langs voor een offerte. Je weet vooraf wat het kost en wanneer ik start. Bel of mail gerust.",
+      ],
+    },
+  ],
+  images: [
+    {
+      src: "/images/image1.jpeg",
+      alt: "Binnenschilderwerk in een rijwoning in Bredene",
+    },
+    {
+      src: "/images/image2.jpeg",
+      alt: "Buitenschilderwerk gevel in Bredene",
+    },
+    {
+      src: "/images/image5.jpeg",
+      alt: "Strak geschilderd houtwerk in Bredene",
+    },
+  ],
+  faq: [
+    {
+      question: "Hoe snel kun je in Bredene langskomen?",
+      answer:
+        "Meestal binnen enkele dagen. Ook in Oudenburg, Ettelgem of Westkerke is dat haalbaar. Ik werk vanuit Oostende.",
+    },
+    {
+      question: "Schilder je ook appartementen?",
+      answer:
+        "Ja. Ik werk stofarm, bescherm de gemeenschappelijke delen en plan per kamer.",
+    },
+    {
+      question: "Wat kost schilderwerk in een rijwoning?",
+      answer:
+        "Hangt af van de oppervlakte en de staat van de muren. Ik kom gratis langs en geef je een vaste prijs.",
+    },
+    {
+      question: "Neem je ook kleine klussen aan in Zuienkerke?",
+      answer:
+        "Ja. Een trap, een slaapkamer, een keuken. Door de korte afstand kan dat snel.",
+    },
+  ],
+  areaServed: ["Bredene", "Oudenburg", "Ettelgem", "Westkerke", "Zuienkerke"],
+};
+
+export const middelkerkePage: LocalPageData = {
+  slug: "schilder-middelkerke",
+  place: "Middelkerke",
+  metaTitle: "Schilder Middelkerke | Schilderwerken aan de kust",
+  metaDescription:
+    "Schilder in Middelkerke voor appartementen en tweede verblijven. Schilderwerken in Middelkerke, Lombardsijde, Wilskerke en Westende.",
+  kicker: "Schilderwerken · Middelkerke",
+  h1: "Schilder in Middelkerke",
+  lead:
+    "Veel appartementen en tweede verblijven in Middelkerke, van eigenaars die hier niet permanent wonen. Als schilder in Middelkerke regel ik schilderwerken ook als je er zelf niet bent, in Lombardsijde, Wilskerke en verder langs de kust.",
+  sections: [
+    {
+      paragraphs: [
+        "Middelkerke is voor een groot deel vakantie- en verhuurwoningen. Mensen wonen in het binnenland en hebben hier een pand dat er verzorgd moet uitzien. Dat snap ik. Ik communiceer helder, ook op afstand.",
+        "Ik begin met een plaatsbezoek: houtwerk, vocht, oude verf, jouw planning. Daarna een offerte. Kan je er niet bij zijn? Ik stuur foto's van de voortgang en bel je op over kleur en timing. Zo weet je wat er gebeurt zonder zelf ter plaatse te moeten zijn.",
+      ],
+    },
+    {
+      heading: "Schilderwerken tegen zeelucht",
+      paragraphs: [
+        "Buitenwerk aan de kust is bescherming, geen luxe. Zout en wind vragen de juiste verf en primer. Ik herstel houtrot, schuur grondig en schilder ramen, deuren en gevelbekleding met systemen die voor dit klimaat gemaakt zijn.",
+        "Een gevel die het hele jaar aan zeewind ligt, vraagt onderhoud. Liever elke paar jaar goed schilderen dan over vijf jaar alles opnieuw moeten doen.",
+      ],
+    },
+    {
+      heading: "Lombardsijde, Wilskerke en Westende",
+      paragraphs: [
+        "Lombardsijde en Wilskerke horen bij Middelkerke, met veel gebouwen dicht bij zee. In Lombardsijde doe ik regelmatig gevels; in Wilskerke binnen- en buitenwerk in woningen en vakantieverblijven.",
+        "Westende ligt net verder richting De Panne, Leffinge is het landelijke deel van de gemeente. Zelfde aanpak: plaatsbezoek, offerte, netjes opleveren. Je hoeft er niet bij te zijn.",
+      ],
+    },
+    {
+      heading: "Onderhoud op afstand",
+      paragraphs: [
+        "Appartement of vakantiewoning maar je woont elders? Ik dek af, schilder, ruim op en lever netjes op. Na afloop stuur ik foto's of kom ik nog eens langs.",
+        "Binnen doe ik volledige appartementen of per kamer. Lakwerk, plafonds, deuren: hetzelfde niveau als bij een gezinswoning. Vraag gerust naar terugkerend onderhoud.",
+      ],
+    },
+  ],
+  images: [
+    {
+      src: "/images/image6.jpeg",
+      alt: "Buitenschilderwerk appartementsgebouw in Middelkerke",
+    },
+    {
+      src: "/images/image08.jpeg",
+      alt: "Geschilderde gevel bestand tegen zeelucht in Middelkerke",
+    },
+    {
+      src: "/images/image7.jpeg",
+      alt: "Binnenschilderwerk tweede verblijf in Middelkerke",
+    },
+  ],
+  faq: [
+    {
+      question: "Kun je mijn tweede verblijf onderhouden als ik zelden ter plaatse ben?",
+      answer:
+        "Ja. We spreken vooraf de werken en toegang af. Ik werk zelfstandig en houd je op de hoogte.",
+    },
+    {
+      question: "Welke verf gebruik je tegen zeelucht?",
+      answer:
+        "Kwaliteitsverf voor kustklimaat, na grondig voorbereidend werk. Houtrot herstel ik altijd vóór het schilderen.",
+    },
+    {
+      question: "Werk je ook tijdens het toeristenseizoen?",
+      answer:
+        "In overleg. Ik plan zo dat hinder minimaal blijft en werk waar mogelijk kamer per kamer.",
+    },
+    {
+      question: "Hoe kies ik kleur als ik niet in Middelkerke ben?",
+      answer:
+        "Tijdens het plaatsbezoek bespreken we stalen. Ik stuur foto's en geef advies, ook voor een pand in Leffinge of Westende.",
+    },
+  ],
+  areaServed: ["Middelkerke", "Lombardsijde", "Wilskerke", "Westende", "Leffinge"],
+};
+
+export const deHaanPage: LocalPageData = {
+  slug: "schilder-de-haan",
+  place: "De Haan",
+  metaTitle: "Schilder De Haan | Schilderwerken aan de kust",
+  metaDescription:
+    "Schilder in De Haan voor villa's en totaalprojecten. Schilderwerken in De Haan, Wenduine, Blankenberge en omgeving, ook decoratieve technieken.",
+  kicker: "Schilderwerken · De Haan",
+  h1: "Schilder in De Haan",
+  lead:
+    "Villa's en grote woningen in De Haan vragen tijd en precisie. Ik doe schilderwerken in De Haan van gevel tot interieur, ook in Wenduine, Klemskerke en de omliggende gemeenten.",
+  sections: [
+    {
+      paragraphs: [
+        "De Haan heeft woningen met karakter: brede gevels, veel houtwerk, interieurs waar afwerking telt. Ik pak zulke projecten zelf aan, binnen en buiten, al meer dan twintig jaar langs de kust.",
+        "Eerst kijk ik wat er nodig is: ondergronden, houtrot, oude verflagen, jouw planning. Vaak werk ik in fases: buiten in drogere periodes, daarna binnen. Zo hoef je niet alles tegelijk uit huis.",
+      ],
+    },
+    {
+      heading: "Schilderwerken met decoratieve afwerking",
+      paragraphs: [
+        "Naast gewoon schilderwerk doe ik kalkverf, betonciré, structuurverf en behang. In villa's combineer ik dat wel eens: een accentmuur in de living, gelakt houtwerk op de deuren, rustige tinten op de slaapkamers.",
+        "Lakwerk op kasten en trappen, spuitwerk op grotere vlakken. Alles strak en stofarm. Geen strepen, geen haastwerk.",
+      ],
+    },
+    {
+      heading: "Wenduine, Klemskerke en Vlissegem",
+      paragraphs: [
+        "Wenduine ligt op een steenworp, Klemskerke en Vlissegem horen bij de gemeente. Vergelijkbare woningen: veel houtwerk, grote ramen, zeelucht.",
+        "Oude villa in het centrum of nieuwbouw in Vlissegem: ik kies verf en primer die passen bij de gevel en de ruimte.",
+      ],
+    },
+    {
+      heading: "Ook Blankenberge en Uitkerke",
+      paragraphs: [
+        "Richting Brugge kom ik in Blankenberge en Uitkerke voor grotere projecten: volledige gevelrenovatie, veel ramen, complex houtwerk. Ik plan het in logische stappen en hou je op de hoogte.",
+        "Eén offerte, één planning, ik voer alles zelf uit. Bel voor een gratis plaatsbezoek. Dan bekijken we samen wat je woning nodig heeft.",
+      ],
+    },
+  ],
+  images: [
+    {
+      src: "/images/image3.jpeg",
+      alt: "Decoratieve afwerking in een villa in De Haan",
+    },
+    {
+      src: "/images/image11.jpeg",
+      alt: "Totaalproject binnen- en buitenschilderwerk De Haan",
+    },
+    {
+      src: "/images/image4.jpeg",
+      alt: "Strak lakwerk op binnendeuren in De Haan",
+    },
+  ],
+  faq: [
+    {
+      question: "Doe je totaalprojecten voor villa's?",
+      answer:
+        "Ja. Binnen en buiten in één planning. Ook in Wenduine, Klemskerke of Vlissegem.",
+    },
+    {
+      question: "Welke decoratieve technieken doe je?",
+      answer:
+        "Kalkverf, betonciré, structuurverf, behang. Tijdens het plaatsbezoek bekijken we wat past.",
+    },
+    {
+      question: "Kom je ook in Blankenberge?",
+      answer:
+        "Ja. Gevelrenovatie, lakwerk, binnen en buiten. Ik kom graag langs voor een offerte.",
+    },
+    {
+      question: "Hoe verloopt een volledige renovatie?",
+      answer:
+        "Plaatsbezoek, offerte, voorbereiding en herstel, dan schilderen in de afgesproken volgorde. Je weet vooraf wat wanneer gebeurt.",
+    },
+  ],
+  areaServed: [
+    "De Haan",
+    "Wenduine",
+    "Klemskerke",
+    "Vlissegem",
+    "Blankenberge",
+    "Uitkerke",
+  ],
+};
+
+export const allLocalPages = [bredenePage, middelkerkePage, deHaanPage];

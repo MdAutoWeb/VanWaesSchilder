@@ -1,65 +1,209 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
+import HeroFan from "./_components/HeroFan";
+import SectionDivider from "./_components/SectionDivider";
+import HorizontalGallery from "./_components/HorizontalGallery";
+import RevealObserver from "./_components/RevealObserver";
+import LocalBusinessSchema from "./_components/LocalBusinessSchema";
+import { OOSTENDE_DEELGEMEENTEN } from "./lib/site";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Schilder Oostende | Van Waes Schilderwerken",
+  description:
+    "Schilder in Oostende voor binnen- en buitenwerk. Van Waes Schilderwerken doet schilderwerken in Oostende en omgeving. Gratis offerte, persoonlijk contact.",
+};
+
+const services = [
+  {
+    num: "01",
+    title: "Binnenschilderwerk",
+    desc: "Muren, plafonds, houtwerk en trappen. Vlot en stofarm geschilderd in een bewoonde woning.",
+    tags: ["Muren", "Plafonds", "Houtwerk"],
+    src: "/images/image8.jpeg",
+  },
+  {
+    num: "02",
+    title: "Buitenschilderwerk",
+    desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.",
+    tags: ["Gevels", "Ramen", "Houtrot"],
+    src: "/images/image2.jpeg",
+  },
+  {
+    num: "03",
+    title: "Decoratieve technieken",
+    desc: "Betonciré, kalkverf, structuurverf en behang. Voor wie net dat tikkeltje extra karakter zoekt.",
+    tags: ["Betonciré", "Kalkverf", "Behang"],
+    src: "/images/image6.jpeg",
+  },
+  {
+    num: "04",
+    title: "Spuit- & lakwerk",
+    desc: "Strak gespoten deuren, kasten, radiatoren en maatwerk. Een egale, fabrieksmatige afwerking.",
+    tags: ["Deuren", "Kasten", "Radiatoren"],
+    src: "/images/image04.jpeg",
+  },
+];
+
+const featuredReview = {
+  text: "Werkt professioneel en correct. Zeer stipt en komt afspraken volledig na. Goede kwaliteit met aandacht voor orde en netheid. Beslist aan te bevelen!",
+  date: "12/02/26",
+  name: "Steve V.",
+};
+
+export default function HomePage() {
+  const areaServed = ["Oostende", ...OOSTENDE_DEELGEMEENTEN];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main id="top">
+      <RevealObserver />
+      <LocalBusinessSchema
+        areaServed={areaServed}
+        pageUrl="/"
+        description={metadata.description as string}
+      />
+
+      {/* ===== HERO ===== */}
+      <section className="hero">
+        <div className="container">
+          <div className="hero-inner">
+            {/* Left: copy */}
+            <div className="hero-left">
+              <span className="kicker reveal">Schilder in Oostende</span>
+              <h1 className="display reveal" data-d="1">
+                Vakmanschap<br />dat blijft
+              </h1>
+              <p className="lead reveal" data-d="2">
+                Ik doe schilderwerken in Oostende, binnen én buiten. Van Mariakerke tot Raversijde: je spreekt rechtstreeks met mij, krijgt een duidelijke offerte en werk dat jaren meegaat.
+              </p>
+              <div className="hero-cta reveal" data-d="3">
+                <Link className="btn btn-primary btn-lg" href="/contact">
+                  Gratis offerte
+                  <svg className="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </Link>
+                <Link className="btn btn-outline btn-lg" href="/realisaties">
+                  Bekijk realisaties
+                </Link>
+              </div>
+              <div className="hero-trust reveal" data-d="4">
+                <span><b>20+</b> jaar ervaring</span>
+                <span className="dot" />
+                <span><span className="stars">★</span> <b>4,9</b> klantbeoordeling</span>
+                <span className="dot" />
+                <span><b>100%</b> zelf uitgevoerd</span>
+              </div>
+            </div>
+
+            {/* Right: signature card fan */}
+            <div className="hero-right">
+              <HeroFan />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+      </section>
+      <SectionDivider topColor="#ffffff" bottomColor="#ffffff" id="hero-svc" thickBand />
+
+      {/* ===== DIENSTEN ===== */}
+      <section className="sec" id="diensten">
+        <div className="container">
+          <div className="sec-head center reveal">
+            <span className="kicker center">Wat ik doe</span>
+            <h2 className="h2">Eén vakman voor élk schilderwerk</h2>
+            <p className="lead">Ik schilder binnen en buiten door heel Oostende, in Mariakerke, Raversijde, Stene en Zandvoorde. Netjes afgedekt, strak afgewerkt.</p>
+          </div>
+
+          <div className="svc-grid">
+            {services.map((svc, i) => (
+              <article key={svc.num} className="svc reveal" data-d={String(i + 1)}>
+                <div className="svc-img">
+                  <span className="svc-num">{svc.num}</span>
+                  <Image
+                    src={svc.src}
+                    alt={svc.title}
+                    fill
+                    sizes="(max-width:720px) 100vw, (max-width:1080px) 50vw, 25vw"
+                    className="svc-photo"
+                  />
+                </div>
+                <div className="svc-body">
+                  <h3>{svc.title}</h3>
+                  <p>{svc.desc}</p>
+                  <div className="svc-tags">
+                    {svc.tags.map((t) => <span key={t}>{t}</span>)}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ===== REALISATIES — horizontal gallery ===== */}
+      <section className="sec soft gallery-sec" id="realisaties">
+        <div className="container">
+          <div className="sec-head center reveal">
+            <span className="kicker center">Recent werk</span>
+            <h2 className="h2">Afwerking in detail</h2>
+            <p className="lead">Totaalshots en close-ups van strakke lijnen, lakwerk en decoratieve afwerkingen. Sleep of swipe door de galerij, klik voor volledig scherm.</p>
+          </div>
+        </div>
+        <HorizontalGallery />
+        <div className="container gallery-link-wrap">
+          <Link href="/realisaties" className="btn btn-ghost btn-lg">
+            Alle realisaties bekijken
+            <svg className="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
+      <SectionDivider topColor="#f6f7f9" bottomColor="#243556" id="gal-quote" flip />
+
+      {/* ===== QUOTE ===== */}
+      <section className="sec quote-sec quote-sec--dark" id="reviews">
+        <div className="container">
+          <blockquote className="pull-quote reveal">
+            <div className="stars" aria-label="5 van 5 sterren">★★★★★</div>
+            <p>&ldquo;{featuredReview.text}&rdquo;</p>
+            <footer className="pull-quote-by">
+              <cite>{featuredReview.name}</cite>
+              <span>{featuredReview.date}</span>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <SectionDivider topColor="#2a3f62" bottomColor="#ffffff" id="quote-cta" />
+
+      {/* ===== CTA FINAL — dark navy ===== */}
+      <section className="cta-final-sec cta-final-sec--light">
+        <div className="container">
+          <div className="cta-final reveal">
+            <span className="kicker center">Neem contact op</span>
+            <h2 className="h2">Klaar voor vakmanschap<br />dat blijft?</h2>
+            <p className="lead cta-final-lead">Bel of mail vrijblijvend. Ik kom langs voor een gratis offerte, voor binnen en buiten.</p>
+            <a href="tel:+32473694723" className="cta-big-phone">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6.5 4h-3a1 1 0 00-1 1.2A16 16 0 0018.8 21.5a1 1 0 001.2-1v-3a1 1 0 00-.8-1l-3.2-.6a1 1 0 00-1 .4l-1 1.3a12.5 12.5 0 01-5-5l1.3-1a1 1 0 00.4-1L9.5 4.8a1 1 0 00-1-.8z" />
+              </svg>
+              0473 69 47 23
+            </a>
+            <div className="cta-final-btns">
+              <Link href="/contact" className="btn btn-yellow btn-lg">
+                Gratis offerte aanvragen
+                <svg className="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+              <Link href="/over-ons" className="btn btn-ghost btn-lg">Over Van Waes</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
