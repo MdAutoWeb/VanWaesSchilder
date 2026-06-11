@@ -41,6 +41,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -59,7 +61,14 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
+  overscroll-behavior-x: none;
+  touch-action: pan-y pinch-zoom;
+}
+main {
+  overflow-x: clip;
+  max-width: 100%;
 }
 img {
   max-width: 100%;
@@ -317,6 +326,9 @@ b {
   right: 0;
   z-index: 60;
   background: transparent;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
 }
 .site-header-bar {
   height: var(--nav-height);
@@ -346,6 +358,8 @@ b {
   align-items: center;
   justify-content: space-between;
   height: var(--nav-height);
+  gap: 12px;
+  min-width: 0;
 }
 .brand-logo-link {
   display: flex;
@@ -406,8 +420,8 @@ b {
 
 .burger {
   display: none;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line-2);
   border-radius: 11px;
   background: #fff;
@@ -415,6 +429,8 @@ b {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 .burger span {
   width: 20px;
@@ -1040,6 +1056,7 @@ section {
    ============================================================ */
 .gallery-sec {
   padding-bottom: 80px;
+  overflow-x: clip;
 }
 
 .h-gallery-track {
@@ -2222,7 +2239,8 @@ section {
 }
 @media (max-width: 900px) {
   .nav-links,
-  .nav-phone {
+  .nav-phone,
+  .nav-cta {
     display: none;
   }
   .burger {
@@ -2275,24 +2293,32 @@ section {
   .hero-trust {
     justify-content: center;
   }
+  .hero {
+    overflow-x: clip;
+  }
   .hero-right {
     order: 2;
     padding-bottom: 0;
-    overflow: visible;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
   }
   .hero-right .hero-fan-wrap {
     height: 400px;
+    overflow: hidden;
+    max-width: 100%;
   }
   .hero-right .fan {
-    transform: scale(0.68) translateY(-12px);
+    transform: scale(clamp(0.36, calc(100vw / 1050), 0.68)) translateY(-12px);
   }
 }
 @media (max-width: 720px) {
   :root {
     --nav-brush-height: 26px;
+    --nav-height: 76px;
   }
   .brand-logo {
-    height: 64px;
+    height: 56px;
   }
   .brand-logo-link-footer .brand-logo {
     height: 80px;
@@ -2310,10 +2336,11 @@ section {
     padding-top: var(--header-total);
   }
   .hero-right .hero-fan-wrap {
-    height: 340px;
+    height: 320px;
+    overflow: hidden;
   }
   .hero-right .fan {
-    transform: scale(0.58) translateY(-10px);
+    transform: scale(clamp(0.34, calc(100vw / 1100), 0.52)) translateY(-10px);
   }
   .hero-cta {
     flex-direction: column;
@@ -2372,17 +2399,21 @@ section {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 14px;
-    max-width: none;
-    margin: 0 -22px;
-    padding: 8px 22px 18px;
+    max-width: 100%;
+    margin: 0;
+    padding: 8px 0 18px;
     grid-template-columns: unset;
   }
   .svc-grid::-webkit-scrollbar {
     display: none;
   }
   .svc {
-    flex: 0 0 min(82vw, 290px);
+    flex: 0 0 min(78vw, 280px);
     scroll-snap-align: start;
+  }
+  #diensten .container,
+  .sec .container:has(.svc-grid) {
+    overflow-x: clip;
   }
   .svc-body {
     padding: 18px 18px 20px;
