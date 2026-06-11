@@ -2293,23 +2293,16 @@ section {
   .hero-trust {
     justify-content: center;
   }
-  .hero {
-    overflow-x: clip;
-  }
   .hero-right {
     order: 2;
     padding-bottom: 0;
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%;
+    overflow: visible;
   }
   .hero-right .hero-fan-wrap {
     height: 400px;
-    overflow: hidden;
-    max-width: 100%;
   }
   .hero-right .fan {
-    transform: scale(clamp(0.36, calc(100vw / 1050), 0.68)) translateY(-12px);
+    transform: scale(0.68) translateY(-12px);
   }
 }
 @media (max-width: 720px) {
@@ -2336,11 +2329,10 @@ section {
     padding-top: var(--header-total);
   }
   .hero-right .hero-fan-wrap {
-    height: 320px;
-    overflow: hidden;
+    height: 340px;
   }
   .hero-right .fan {
-    transform: scale(clamp(0.34, calc(100vw / 1100), 0.52)) translateY(-10px);
+    transform: scale(0.58) translateY(-10px);
   }
   .hero-cta {
     flex-direction: column;

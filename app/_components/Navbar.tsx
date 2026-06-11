@@ -112,9 +112,6 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
-        <Link href="/contact" onClick={() => setMenuOpen(false)}>
-          Contact
-        </Link>
         <Link className="btn btn-primary btn-lg" href="/contact" onClick={() => setMenuOpen(false)}>
           Gratis offerte
         </Link>
