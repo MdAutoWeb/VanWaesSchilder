@@ -886,9 +886,11 @@ section {
    ============================================================ */
 .svc-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
-  padding: 12px 4px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 16px 4px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .svc {
   position: relative;
@@ -913,7 +915,7 @@ section {
 }
 .svc-img {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 5/4;
   overflow: hidden;
   background: var(--bg-tint);
   border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
@@ -942,23 +944,24 @@ section {
 }
 
 .svc-body {
-  padding: 24px 24px 26px;
+  padding: 28px 28px 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   flex: 1;
   background: #fff;
   border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
 }
 .svc-body h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: -0.02em;
 }
 .svc-body p {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--slate);
   font-weight: 300;
   flex: 1;
@@ -2212,7 +2215,8 @@ section {
    ============================================================ */
 @media (max-width: 1080px) {
   .svc-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .gallery {
     grid-template-columns: repeat(4, 1fr);

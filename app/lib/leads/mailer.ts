@@ -1,44 +1,62 @@
+import nodemailer, { type Transporter } from "nodemailer";
 import type { GroqAnalysis, LeadPayload } from "./types";
 import { BUSINESS, SITE_URL } from "../site";
 
-const BREVO_URL = "https://api.brevo.com/v3/smtp/email";
+let cachedTransporter: Transporter | null = null;
 
-async function sendBrevoMail(payload: {
-  to: { email: string; name?: string }[];
-  sender: { email: string; name: string };
-  subject: string;
-  textContent: string;
-}): Promise<boolean> {
-  const apiKey = process.env.BREVO_API_KEY;
-  if (!apiKey) {
-    console.error("[leads] BREVO_API_KEY ontbreekt");
-    return false;
+function getTransporter(): Transporter | null {
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  const port = Number(process.env.SMTP_PORT ?? "587");
+
+  if (!host || !user || !pass) {
+    console.error("[leads] SMTP config ontbreekt");
+    return null;
   }
 
-  try {
-    const res = await fetch(BREVO_URL, {
-      method: "POST",
-      headers: {
-        "api-key": apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+  if (cachedTransporter) return cachedTransporter;
 
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("[leads] Brevo mislukt:", res.status, err);
-      return false;
-    }
+  cachedTransporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass },
+  });
+
+  return cachedTransporter;
+}
+
+async function sendMail(payload: {
+  to: string;
+  toName?: string;
+  fromName: string;
+  subject: string;
+  text: string;
+  replyTo?: string;
+}): Promise<boolean> {
+  const transporter = getTransporter();
+  if (!transporter) return false;
+
+  const fromAddress = process.env.SMTP_FROM ?? process.env.SMTP_USER!;
+
+  try {
+    await transporter.sendMail({
+      from: `"${payload.fromName}" <${fromAddress}>`,
+      to: payload.toName ? `"${payload.toName}" <${payload.to}>` : payload.to,
+      subject: payload.subject,
+      text: payload.text,
+      replyTo: payload.replyTo,
+    });
     return true;
   } catch (error) {
-    console.error("[leads] Brevo error:", error);
+    console.error("[leads] SMTP verzenden mislukt:", error);
     return false;
   }
 }
 
 export async function sendCustomerConfirmation(lead: LeadPayload): Promise<void> {
-  const textContent = `Beste ${lead.naam},
+  const text = `Beste ${lead.naam},
 
 Bedankt voor uw aanvraag. Ik neem zo snel mogelijk contact met u op — normaal gezien binnen de 24 uur.
 
@@ -52,11 +70,12 @@ Van Waes Schilderwerken
 ${BUSINESS.phoneDisplay}
 ${SITE_URL.replace(/^https?:\/\//, "")}`;
 
-  await sendBrevoMail({
-    sender: { name: "Van Waes Schilderwerken", email: BUSINESS.email },
-    to: [{ email: lead.email, name: lead.naam }],
+  await sendMail({
+    fromName: "Van Waes Schilderwerken",
+    to: lead.email,
+    toName: lead.naam,
     subject: "Uw aanvraag bij Van Waes Schilderwerken",
-    textContent,
+    text,
   });
 }
 
@@ -84,7 +103,7 @@ Reageer: ${analysis.aanbevolen_reactietijd}
     ? `\nBekijk in Airtable: ${airtableUrl}`
     : "";
 
-  const textContent = `Naam: ${lead.naam}
+  const text = `Naam: ${lead.naam}
 Telefoon: ${lead.telefoon}
 Email: ${lead.email}
 Type werk: ${lead.typeWerk}
@@ -92,10 +111,12 @@ Gemeente: ${lead.gemeente}
 Omschrijving: ${lead.omschrijving || "—"}
 ${aiBlock}${airtableLine}`;
 
-  await sendBrevoMail({
-    sender: { name: "Van Waes Website", email: "noreply@webamo.be" },
-    to: [{ email: BUSINESS.email, name: "Van Waes Schilderwerken" }],
+  await sendMail({
+    fromName: "Van Waes Website",
+    to: BUSINESS.email,
+    toName: "Van Waes Schilderwerken",
     subject: `🎨 Nieuwe aanvraag — ${lead.naam} (${lead.gemeente})`,
-    textContent,
+    text,
+    replyTo: lead.email,
   });
 }

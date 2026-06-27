@@ -197,7 +197,7 @@ export const deHaanPage: LocalPageData = {
       heading: "Schilderwerken met decoratieve afwerking",
       paragraphs: [
         "Naast gewoon schilderwerk doe ik kalkverf, betonciré, structuurverf en behang. In villa's combineer ik dat wel eens: een accentmuur in de living, gelakt houtwerk op de deuren, rustige tinten op de slaapkamers.",
-        "Lakwerk op kasten en trappen, spuitwerk op grotere vlakken. Alles strak en stofarm. Geen strepen, geen haastwerk.",
+        "Lakwerk op kasten en trappen, strak en stofarm afgewerkt. Geen strepen, geen haastwerk.",
       ],
     },
     {
@@ -211,7 +211,7 @@ export const deHaanPage: LocalPageData = {
       heading: "Ook Blankenberge en Uitkerke",
       paragraphs: [
         "Richting Brugge kom ik in Blankenberge en Uitkerke voor grotere projecten: volledige gevelrenovatie, veel ramen, complex houtwerk. Ik plan het in logische stappen en hou je op de hoogte.",
-        "Eén offerte, één planning, ik voer alles zelf uit. Bel voor een gratis plaatsbezoek. Dan bekijken we samen wat je woning nodig heeft.",
+        "Eén offerte, één planning, alles onder mijn persoonlijke begeleiding. Bel voor een gratis plaatsbezoek. Dan bekijken we samen wat je woning nodig heeft.",
       ],
     },
   ],

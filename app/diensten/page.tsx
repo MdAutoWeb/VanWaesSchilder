@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ImageSlot from "../_components/ImageSlot";
+import Image from "next/image";
 import RevealObserver from "../_components/RevealObserver";
 import FaqAccordion from "../_components/FaqAccordion";
 import FaqSchema from "../_components/FaqSchema";
@@ -8,14 +8,13 @@ import { homeFaq } from "../_data/faq-home";
 
 export const metadata: Metadata = {
   title: "Diensten | Van Waes Schilderwerken",
-  description: "Binnenschilderwerk, buitenschilderwerk, decoratieve technieken en spuit- & lakwerk. Ontdek het volledige aanbod.",
+  description: "Binnenschilderwerk, buitenschilderwerk en decoratieve technieken. Ontdek het volledige aanbod.",
 };
 
 const diensten = [
-  { num: "01", title: "Binnenschilderwerk", desc: "Muren, plafonds, houtwerk en trappen, vlot en stofarm geschilderd in een bewoonde woning.", tags: ["Muren", "Plafonds", "Houtwerk"] },
-  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"] },
-  { num: "03", title: "Decoratieve technieken", desc: "Betonciré, kalkverf, structuurverf en behang. Voor wie net dat tikkeltje extra karakter zoekt.", tags: ["Betonciré", "Kalkverf", "Behang"] },
-  { num: "04", title: "Spuit- & lakwerk", desc: "Strak gespoten deuren, kasten, radiatoren en maatwerk. Een egale, fabrieksmatige afwerking.", tags: ["Deuren", "Kasten", "Radiatoren"] },
+  { num: "01", title: "Binnenschilderwerk", desc: "Muren, plafonds, houtwerk en trappen, vlot en stofarm geschilderd in een bewoonde woning.", tags: ["Muren", "Plafonds", "Houtwerk"], src: "/images/image8.jpeg" },
+  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"], src: "/images/image2.jpeg" },
+  { num: "03", title: "Decoratieve technieken", desc: "Betonciré, kalkverf, structuurverf en behang. Voor wie net dat tikkeltje extra karakter zoekt.", tags: ["Betonciré", "Kalkverf", "Behang"], src: "/images/image6.jpeg" },
 ];
 
 export default function DienstenPage() {
@@ -40,7 +39,13 @@ export default function DienstenPage() {
               <article key={svc.num} className="svc reveal" data-d={String(i + 1)}>
                 <div className="svc-img">
                   <span className="svc-num">{svc.num}</span>
-                  <ImageSlot placeholder={svc.title} />
+                  <Image
+                    src={svc.src}
+                    alt={svc.title}
+                    fill
+                    sizes="(max-width:720px) 100vw, (max-width:1080px) 50vw, 25vw"
+                    className="svc-photo"
+                  />
                 </div>
                 <div className="svc-body">
                   <h3>{svc.title}</h3>

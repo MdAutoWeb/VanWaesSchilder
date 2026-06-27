@@ -2,7 +2,6 @@ export const WORK_TYPES = [
   "Binnenschilderwerk",
   "Buitenschilderwerk",
   "Decoratieve technieken",
-  "Spuit- & lakwerk",
   "Andere",
 ] as const;
 

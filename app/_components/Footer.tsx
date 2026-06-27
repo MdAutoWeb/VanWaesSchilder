@@ -104,9 +104,6 @@ export default function Footer() {
                 <li>
                   <Link href="/diensten">Decoratieve technieken</Link>
                 </li>
-                <li>
-                  <Link href="/diensten">Spuit- &amp; lakwerk</Link>
-                </li>
               </ul>
             </FooterCol>
 

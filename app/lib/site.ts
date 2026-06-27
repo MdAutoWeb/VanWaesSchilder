@@ -2,7 +2,7 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.swvanwaes.be";
 
 export const SITE_DESCRIPTION =
-  "Van Waes Schilderwerken: strak en duurzaam binnen- en buitenschilderwerk aan de Belgische kust. Vakmanschap dat blijft.";
+  "Van Waes Schilderwerken: strak en duurzaam binnen- en buitenschilderwerk aan de Belgische kust en omstreken. Vakmanschap dat blijft.";
 
 export const BUSINESS = {
   name: "Van Waes Schilderwerken",

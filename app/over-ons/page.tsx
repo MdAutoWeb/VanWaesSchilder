@@ -6,7 +6,7 @@ import { featuredReview } from "../_data/local-pages";
 
 export const metadata: Metadata = {
   title: "Over Ons | Van Waes Schilderwerken",
-  description: "Een familiale schilder met oog voor detail. Meer dan 20 jaar vakmanschap in Oostende en omgeving.",
+  description: "Een familiale schilder met oog voor detail, actief aan de Belgische kust en omstreken.",
 };
 
 export default function OverOnsPage() {
@@ -19,7 +19,7 @@ export default function OverOnsPage() {
         <div className="container">
           <span className="kicker reveal">Het bedrijf</span>
           <h1 className="reveal" data-d="1">Over ons.</h1>
-          <p className="lead reveal" data-d="2">Een familiale schilder met oog voor detail. Al meer dan 20 jaar actief aan de Belgische kust.</p>
+          <p className="lead reveal" data-d="2">Een familiale schilder met oog voor detail, actief aan de Belgische kust en omstreken.</p>
         </div>
       </div>
 
@@ -39,14 +39,14 @@ export default function OverOnsPage() {
             <div className="about-copy reveal" data-d="1">
               <span className="kicker">Over Van Waes</span>
               <h2 className="h2" style={{ marginBottom: "22px" }}>Een familiale schilder<br />met oog voor detail</h2>
-              <p>Schilderwerken Van Waes staat voor eerlijk vakmanschap. Als zelfstandig schilder voer ik elk project persoonlijk uit, zonder onderaannemers. Zo blijft de kwaliteit op elke werf gegarandeerd.</p>
-              <p>Van een enkele kamer tot een volledige woning: ik denk mee, adviseer over kleur en materiaal en lever werk dat jaren meegaat aan de Belgische kust.</p>
+              <p>Schilderwerken Van Waes staat voor eerlijk vakmanschap. Ik volg elk project persoonlijk op en werk waar nodig samen met een vast team, altijd onder mijn begeleiding. Zo blijft de kwaliteit op elke werf gegarandeerd.</p>
+              <p>Van een enkele kamer tot een volledige woning: ik denk mee, adviseer over kleur en materiaal en lever werk dat jaren meegaat aan de Belgische kust en omstreken.</p>
               <div className="values">
                 <div className="value">
                   <span className="ic">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
                   </span>
-                  <div><h4>Zelf uitgevoerd, vaste kwaliteit</h4><p>Van offerte tot oplevering door dezelfde vakman.</p></div>
+                  <div><h4>Persoonlijke opvolging</h4><p>Van offerte tot oplevering altijd onder mijn begeleiding.</p></div>
                 </div>
                 <div className="value">
                   <span className="ic">

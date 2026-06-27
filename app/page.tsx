@@ -36,13 +36,6 @@ const services = [
     tags: ["Betonciré", "Kalkverf", "Behang"],
     src: "/images/image6.jpeg",
   },
-  {
-    num: "04",
-    title: "Spuit- & lakwerk",
-    desc: "Strak gespoten deuren, kasten, radiatoren en maatwerk. Een egale, fabrieksmatige afwerking.",
-    tags: ["Deuren", "Kasten", "Radiatoren"],
-    src: "/images/image04.jpeg",
-  },
 ];
 
 const featuredReview = {
@@ -88,11 +81,11 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="hero-trust reveal" data-d="4">
-                <span><b>20+</b> jaar ervaring</span>
-                <span className="dot" />
                 <span><span className="stars">★</span> <b>4,9</b> klantbeoordeling</span>
                 <span className="dot" />
-                <span><b>100%</b> zelf uitgevoerd</span>
+                <span><b>Persoonlijke</b> opvolging</span>
+                <span className="dot" />
+                <span><b>Gratis</b> offerte</span>
               </div>
             </div>
 

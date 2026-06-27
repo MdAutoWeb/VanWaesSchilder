@@ -2,7 +2,7 @@ import { createLeadRecord, patchLeadAnalysis } from "@/app/lib/leads/airtable";
 import {
   sendCustomerConfirmation,
   sendOwnerNotification,
-} from "@/app/lib/leads/brevo";
+} from "@/app/lib/leads/mailer";
 import { analyzeLead } from "@/app/lib/leads/groq";
 import { WORK_TYPES, type LeadPayload, type WorkType } from "@/app/lib/leads/types";
 
