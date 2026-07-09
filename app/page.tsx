@@ -27,7 +27,7 @@ const services = [
     desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.",
     tags: ["Gevels", "Ramen", "Houtrot"],
     // TODO: vervang exterieur-afbeelding door klantfoto van lopend buitenwerk (tijdelijk), later te vervangen door afgewerkte-resultaat foto's zodra klant deze aanlevert.
-    src: "/images/buitenschilderwerk-nieuw.jfif",
+    src: "/images/buitenschilderwerk-nieuw.jpeg",
   },
   {
     num: "03",
