@@ -65,7 +65,7 @@ export const bredenePage: LocalPageData = {
       alt: "Binnenschilderwerk in een rijwoning",
     },
     {
-      src: "/images/new%20images%209/581655f4-80c5-4cd3-aa57-4ab0773b8ea0.jfif",
+      src: "/images/buitenschilderwerk-nieuw.jfif",
       alt: "Buitenschilderwerk aan een voorgevel",
     },
     {
@@ -306,7 +306,7 @@ export const oostendePage: LocalPageData = {
       alt: "Binnenschilderwerk in Oostende",
     },
     {
-      src: "/images/new%20images%209/581655f4-80c5-4cd3-aa57-4ab0773b8ea0.jfif",
+      src: "/images/buitenschilderwerk-nieuw.jfif",
       alt: "Buitenschilderwerk aan een voorgevel in Oostende",
     },
     {

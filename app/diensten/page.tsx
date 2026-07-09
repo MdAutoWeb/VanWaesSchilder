@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const diensten = [
   { num: "01", title: "Binnenschilderwerk", desc: "Muren, plafonds, houtwerk en trappen, vlot en stofarm geschilderd in een bewoonde woning.", tags: ["Muren", "Plafonds", "Houtwerk"], src: "/images/image8.jpeg" },
-  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"], src: "/images/new%20images%209/581655f4-80c5-4cd3-aa57-4ab0773b8ea0.jfif" },
+  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"], src: "/images/buitenschilderwerk-nieuw.jfif" },
   { num: "03", title: "Decoratieve technieken", desc: "Betonciré, kalkverf, structuurverf en behang. Voor wie net dat tikkeltje extra karakter zoekt.", tags: ["Betonciré", "Kalkverf", "Behang"], src: "/images/image6.jpeg" },
 ];
 
