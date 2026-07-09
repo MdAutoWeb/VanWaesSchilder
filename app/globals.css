@@ -1920,6 +1920,15 @@ section {
   resize: vertical;
   min-height: 96px;
 }
+.field-hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 .form .row {
   display: grid;
   grid-template-columns: 1fr 1fr;

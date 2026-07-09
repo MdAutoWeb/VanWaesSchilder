@@ -21,6 +21,7 @@ export default function ContactFormVW() {
       typeWerk: String(data.get("typeWerk") ?? "").trim(),
       gemeente: String(data.get("gemeente") ?? "").trim(),
       omschrijving: String(data.get("omschrijving") ?? "").trim(),
+      website: String(data.get("website") ?? "").trim(),
     };
 
     try {
@@ -110,6 +111,18 @@ export default function ContactFormVW() {
           id="f-msg"
           name="omschrijving"
           placeholder="Vertel kort wat u gedaan wil hebben…"
+          disabled={loading || sent}
+        />
+      </div>
+
+      <div className="field field-hp" aria-hidden="true">
+        <label htmlFor="f-website">Website</label>
+        <input
+          id="f-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
           disabled={loading || sent}
         />
       </div>
