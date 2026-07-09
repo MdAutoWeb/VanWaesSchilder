@@ -31,10 +31,10 @@ export const realisatieTiles: RealisatieTile[] = [
   },
   {
     id: "real-ba-01",
-    beforeSrc: "/images/image01.jpeg",
-    afterSrc: "/images/image00.jpeg",
-    beforeAlt: "Keuken na het schilderwerk",
-    afterAlt: "Keuken voor het schilderwerk",
+    beforeSrc: "/images/new%20images%209/954d5581-ace9-4525-a74c-817f976327f5.jfif",
+    afterSrc: "/images/new%20images%209/00e20dbe-9e0d-4809-8fc8-a320236d849d.jfif",
+    beforeAlt: "Buitenwerk voor het schilderen",
+    afterAlt: "Buitenwerk na het schilderen",
     size: "w2 h2",
   },
   {
@@ -57,10 +57,10 @@ export const realisatieTiles: RealisatieTile[] = [
   },
   {
     id: "real-ba-02",
-    beforeSrc: "/images/image5.jpeg",
-    afterSrc: "/images/image0.jpeg",
-    beforeAlt: "Kamer na het schilderwerk",
-    afterAlt: "Kamer tijdens de werken",
+    beforeSrc: "/images/new%20images%209/25e4b3d7-a54e-46df-8a14-4a645b3f1f1a.jfif",
+    afterSrc: "/images/new%20images%209/704b30c2-6ebe-42cb-8718-688903f9d01a.jfif",
+    beforeAlt: "Woonkamer voor het schilderwerk",
+    afterAlt: "Woonkamer na het schilderwerk",
     size: "w2 h2",
   },
   {
@@ -152,5 +152,19 @@ export const realisatieTiles: RealisatieTile[] = [
     src: "/images/image07.jpeg",
     alt: "Schilderrealisatie Van Waes",
     size: "w4",
+  },
+  {
+    id: "real-ba-03",
+    beforeSrc: "/images/new%20images%209/732868f7-e6ec-40f8-8050-3e7174e4b16f.jfif",
+    afterSrc: "/images/new%20images%209/db42d05a-f4f6-44c1-8931-e46c6784f486.jfif",
+    beforeAlt: "Detail voor het schilderwerk",
+    afterAlt: "Detail na het schilderwerk",
+    size: "w2",
+  },
+  {
+    id: "real-new-5816",
+    src: "/images/new%20images%209/581655f4-80c5-4cd3-aa57-4ab0773b8ea0.jfif",
+    alt: "Buitenschilderwerk Van Waes",
+    size: "w2",
   },
 ];

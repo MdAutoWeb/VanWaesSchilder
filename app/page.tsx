@@ -6,12 +6,11 @@ import SectionDivider from "./_components/SectionDivider";
 import HorizontalGallery from "./_components/HorizontalGallery";
 import RevealObserver from "./_components/RevealObserver";
 import LocalBusinessSchema from "./_components/LocalBusinessSchema";
-import { OOSTENDE_DEELGEMEENTEN } from "./lib/site";
 
 export const metadata: Metadata = {
-  title: "Schilder Oostende | Van Waes Schilderwerken",
+  title: "Van Waes Schilderwerken | Schilderwerken aan de kust",
   description:
-    "Schilder in Oostende voor binnen- en buitenwerk. Van Waes Schilderwerken doet schilderwerken in Oostende en omgeving. Gratis offerte, persoonlijk contact.",
+    "Van Waes Schilderwerken voor binnen- en buitenschilderwerk aan de kust en in het polderland. Gratis offerte, persoonlijk contact.",
 };
 
 const services = [
@@ -27,7 +26,8 @@ const services = [
     title: "Buitenschilderwerk",
     desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.",
     tags: ["Gevels", "Ramen", "Houtrot"],
-    src: "/images/image2.jpeg",
+    // TODO: vervang exterieur-afbeelding door klantfoto van lopend buitenwerk (tijdelijk), later te vervangen door afgewerkte-resultaat foto's zodra klant deze aanlevert.
+    src: "/images/new%20images%209/581655f4-80c5-4cd3-aa57-4ab0773b8ea0.jfif",
   },
   {
     num: "03",
@@ -45,7 +45,7 @@ const featuredReview = {
 };
 
 export default function HomePage() {
-  const areaServed = ["Oostende", ...OOSTENDE_DEELGEMEENTEN];
+  const areaServed = ["De kust", "Het polderland", "Uw regio"];
 
   return (
     <main id="top">
@@ -62,12 +62,12 @@ export default function HomePage() {
           <div className="hero-inner">
             {/* Left: copy */}
             <div className="hero-left">
-              <span className="kicker reveal">Schilder in Oostende</span>
+              <span className="kicker reveal">Schilderwerken aan de kust</span>
               <h1 className="display reveal" data-d="1">
                 Vakmanschap<br />dat blijft
               </h1>
               <p className="lead reveal" data-d="2">
-                Ik doe schilderwerken in Oostende, binnen én buiten. Van Mariakerke tot Raversijde: je spreekt rechtstreeks met mij, krijgt een duidelijke offerte en werk dat jaren meegaat.
+                Ik schilder in uw regio. Oostende, de kust, het polderland: men vindt er een waaier aan woningtypes, van tweede verblijven tot fermettes, van rijhuizen tot villa&apos;s, van appartementen tot AirB&amp;B&apos;s, elk met hun eigen specifieke vereisten en materialen. Wij kiezen altijd in overleg met de klant voor de meest optimale oplossingen.
               </p>
               <div className="hero-cta reveal" data-d="3">
                 <Link className="btn btn-primary btn-lg" href="/contact">
@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className="sec-head center reveal">
             <span className="kicker center">Wat ik doe</span>
             <h2 className="h2">Eén vakman voor élk schilderwerk</h2>
-            <p className="lead">Ik schilder binnen en buiten door heel Oostende, in Mariakerke, Raversijde, Stene en Zandvoorde. Netjes afgedekt, strak afgewerkt.</p>
+            <p className="lead">Van een klassieke rijwoning tot een villa met karakter: elk type woning vraagt een eigen aanpak. Ik bekijk per project welke voorbereiding, materialen en afwerking het best passen, in overleg met u.</p>
           </div>
 
           <div className="svc-grid">
@@ -140,7 +140,7 @@ export default function HomePage() {
           <div className="sec-head center reveal">
             <span className="kicker center">Recent werk</span>
             <h2 className="h2">Afwerking in detail</h2>
-            <p className="lead">Totaalshots en close-ups van strakke lijnen, lakwerk en decoratieve afwerkingen. Sleep of swipe door de galerij, klik voor volledig scherm.</p>
+            <p className="lead">Totaalshots en close-ups van strakke lijnen, lakwerk en decoratieve afwerkingen. Swipe doorheen de galerij, klik voor volledig scherm.</p>
           </div>
         </div>
         <HorizontalGallery />

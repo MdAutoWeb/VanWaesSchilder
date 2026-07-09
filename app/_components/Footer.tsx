@@ -145,7 +145,7 @@ export default function Footer() {
                   <Link href="/schilder-de-haan">Schilder De Haan</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Oostende &amp; omgeving</Link>
+                  <Link href="/schilder-oostende">Oostende &amp; omgeving</Link>
                 </li>
               </ul>
             </FooterCol>
@@ -185,6 +185,9 @@ export default function Footer() {
                 <span>{BUSINESS.vatDisplay}</span>
               </p>
               <p className="footer-address">{BUSINESS.addressDisplay}</p>
+              <p className="footer-address">
+                Actief in: Oostende, Bredene, Middelkerke, De Haan, Nieuwpoort, Koksijde en omstreken.
+              </p>
             </div>
             <p className="footer-credit">
               Website door{" "}

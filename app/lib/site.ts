@@ -28,9 +28,3 @@ export const SOCIAL = {
   instagram: "https://www.instagram.com/schilderwerkenvanwaes/",
 } as const;
 
-export const OOSTENDE_DEELGEMEENTEN = [
-  "Mariakerke",
-  "Raversijde",
-  "Stene",
-  "Zandvoorde",
-] as const;

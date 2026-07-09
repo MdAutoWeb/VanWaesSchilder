@@ -29,7 +29,7 @@ export default function ContactPage() {
             <div className="cta-inner">
               <div className="cta-info">
                 <h2>Klaar voor een<br />strak resultaat?</h2>
-                <p className="lead">Vraag vrijblijvend je offerte aan. Ik kom langs in Oostende en omgeving, bekijk het werk en bezorg je een heldere prijs.</p>
+                <p className="lead">Vraag vrijblijvend je offerte aan. Ik kom langs in uw regio, bekijk het werk en bezorg je een heldere prijs.</p>
                 <div className="cta-points">
                   <div className="cta-point">
                     <span className="ic">

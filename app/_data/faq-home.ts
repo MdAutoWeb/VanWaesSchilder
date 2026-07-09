@@ -19,7 +19,7 @@ export const homeFaq: FaqItem[] = [
   {
     question: "Doe je zowel binnen- als buitenschilderwerk?",
     answer:
-      "Ja, van living tot volledige gevel. Buitenwerk aan de kust vraagt verf die tegen zeelucht bestand is. Daar gebruik ik de juiste producten voor.",
+      "Ja, van living tot buitenschilderwerk rond ramen, deuren en voorgevel. Buitenwerk aan de kust vraagt verf die tegen zeelucht bestand is. Daar gebruik ik de juiste producten voor.",
   },
   {
     question: "Welke verf gebruik je?",
@@ -34,7 +34,7 @@ export const homeFaq: FaqItem[] = [
   {
     question: "In welke regio werk je?",
     answer:
-      "Oostende en omgeving: Bredene, De Haan, Middelkerke, Gistel en omliggende gemeenten.",
+      "Ik schilder aan de kust en in het polderland, in overleg met de klant en afgestemd op het type woning en de juiste materialen.",
   },
   {
     question: "Moet ik zelf iets voorbereiden?",

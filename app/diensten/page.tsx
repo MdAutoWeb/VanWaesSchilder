@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const diensten = [
   { num: "01", title: "Binnenschilderwerk", desc: "Muren, plafonds, houtwerk en trappen, vlot en stofarm geschilderd in een bewoonde woning.", tags: ["Muren", "Plafonds", "Houtwerk"], src: "/images/image8.jpeg" },
-  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"], src: "/images/image2.jpeg" },
+  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"], src: "/images/new%20images%209/581655f4-80c5-4cd3-aa57-4ab0773b8ea0.jfif" },
   { num: "03", title: "Decoratieve technieken", desc: "Betonciré, kalkverf, structuurverf en behang. Voor wie net dat tikkeltje extra karakter zoekt.", tags: ["Betonciré", "Kalkverf", "Behang"], src: "/images/image6.jpeg" },
 ];
 
@@ -27,7 +27,7 @@ export default function DienstenPage() {
         <div className="container">
           <span className="kicker reveal">Wat ik doe</span>
           <h1 className="reveal" data-d="1">Mijn diensten.</h1>
-          <p className="lead reveal" data-d="2">Van een frisse living tot een volledige gevelrenovatie, met de juiste verf voor de juiste plek.</p>
+          <p className="lead reveal" data-d="2">Van een frisse living tot een verzorgde voorgevel schilderen, met de juiste verf voor de juiste plek.</p>
         </div>
       </div>
 

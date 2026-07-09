@@ -134,8 +134,7 @@ export default function LocalPage({ data }: LocalPageProps) {
               Schilder nodig in {data.place}?
             </h2>
             <p className="lead cta-final-lead">
-              Bel of mail vrijblijvend voor een gratis offerte ter plaatse in{" "}
-              {data.place} en omgeving.
+              Bel of mail vrijblijvend voor een gratis offerte ter plaatse in {data.place} en omgeving.
             </p>
             <a href="tel:+32473694723" className="cta-big-phone">
               <svg

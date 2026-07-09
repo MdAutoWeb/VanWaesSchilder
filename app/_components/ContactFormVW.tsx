@@ -97,7 +97,7 @@ export default function ContactFormVW() {
             id="f-gemeente"
             name="gemeente"
             type="text"
-            placeholder="Bv. Oostende"
+            placeholder="Bv. uw gemeente"
             required
             disabled={loading || sent}
           />
