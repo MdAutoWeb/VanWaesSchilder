@@ -80,20 +80,43 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+function hostKey(hostname: string): string {
+  return hostname.replace(/^www\./i, "").toLowerCase();
+}
+
+function addAllowedHost(hosts: Set<string>, value: string | null | undefined): void {
+  if (!value) return;
+
+  const trimmed = value.trim();
+  if (!trimmed) return;
+
+  try {
+    const hostname = trimmed.includes("://")
+      ? new URL(trimmed).hostname
+      : trimmed.split(":")[0];
+    hosts.add(hostKey(hostname));
+  } catch {
+    // ignore invalid URLs
+  }
+}
+
 function isAllowedOrigin(request: Request): boolean {
   const origin = request.headers.get("origin");
   if (!origin) return true;
 
-  const allowed = new Set<string>();
+  const allowedHosts = new Set<string>();
 
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    allowed.add(process.env.NEXT_PUBLIC_SITE_URL);
+  addAllowedHost(allowedHosts, process.env.NEXT_PUBLIC_SITE_URL);
+  addAllowedHost(allowedHosts, "localhost");
+  addAllowedHost(allowedHosts, "127.0.0.1");
+  addAllowedHost(allowedHosts, request.headers.get("host"));
+
+  try {
+    const originHost = hostKey(new URL(origin).hostname);
+    return allowedHosts.has(originHost);
+  } catch {
+    return false;
   }
-
-  allowed.add("http://localhost:3000");
-  allowed.add("http://127.0.0.1:3000");
-
-  return allowed.has(origin);
 }
 
 function parseLead(body: unknown): LeadPayload | null {
