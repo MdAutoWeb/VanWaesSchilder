@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "setup:airtable": "node scripts/setup-airtable.mjs"
+    "setup:airtable": "node scripts/setup-airtable.mjs",
+    "test:smtp": "node --env-file=.env.local scripts/test-smtp.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

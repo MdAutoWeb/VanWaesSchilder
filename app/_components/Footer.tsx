@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
 import BrandLogo from "./BrandLogo";
+import CookieSettingsLink from "./CookieSettingsLink";
 import SectionDivider from "./SectionDivider";
 import { BUSINESS, SOCIAL, WEBAMO_URL } from "../lib/site";
 
@@ -183,6 +184,10 @@ export default function Footer() {
                 <span>© {new Date().getFullYear()} Van Waes Schilderwerken</span>
                 <span className="footer-sep" aria-hidden="true" />
                 <span>{BUSINESS.vatDisplay}</span>
+                <span className="footer-sep" aria-hidden="true" />
+                <Link href="/privacybeleid">Privacybeleid</Link>
+                <span className="footer-sep" aria-hidden="true" />
+                <CookieSettingsLink />
               </p>
               <p className="footer-address">{BUSINESS.addressDisplay}</p>
               <p className="footer-address">

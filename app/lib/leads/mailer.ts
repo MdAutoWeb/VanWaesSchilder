@@ -1,29 +1,26 @@
-import nodemailer, { type Transporter } from "nodemailer";
+import type { Transporter } from "nodemailer";
 import type { GroqAnalysis, LeadPayload } from "./types";
 import { BUSINESS, SITE_URL } from "../site";
+import {
+  createSmtpTransporter,
+  formatSmtpError,
+  getSmtpConfig,
+} from "./smtp";
 
 let cachedTransporter: Transporter | null = null;
 
 function getTransporter(): Transporter | null {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const port = Number(process.env.SMTP_PORT ?? "587");
-
-  if (!host || !user || !pass) {
-    console.error("[leads] SMTP config ontbreekt");
+  const smtp = getSmtpConfig();
+  if (!smtp.ok) {
+    console.error("[leads] SMTP config ontbreekt:", {
+      missing: smtp.missing,
+    });
     return null;
   }
 
   if (cachedTransporter) return cachedTransporter;
 
-  cachedTransporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
-
+  cachedTransporter = createSmtpTransporter(smtp.config);
   return cachedTransporter;
 }
 
@@ -35,27 +32,56 @@ async function sendMail(payload: {
   text: string;
   replyTo?: string;
 }): Promise<boolean> {
+  const smtp = getSmtpConfig();
+  if (!smtp.ok) {
+    console.error("[leads] SMTP send overgeslagen, config ontbreekt:", smtp.missing);
+    return false;
+  }
+
   const transporter = getTransporter();
   if (!transporter) return false;
 
-  const fromAddress = process.env.SMTP_FROM ?? process.env.SMTP_USER!;
+  const fromAddress = smtp.config.from;
+
+  console.log("[leads] SMTP verzenden start:", {
+    host: smtp.config.host,
+    port: smtp.config.port,
+    secure: smtp.config.secure,
+    requireTLS: smtp.config.requireTLS,
+    from: fromAddress,
+    to: payload.to,
+    subject: payload.subject,
+  });
 
   try {
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"${payload.fromName}" <${fromAddress}>`,
       to: payload.toName ? `"${payload.toName}" <${payload.to}>` : payload.to,
       subject: payload.subject,
       text: payload.text,
       replyTo: payload.replyTo,
     });
+
+    console.log("[leads] SMTP verzonden:", {
+      to: payload.to,
+      subject: payload.subject,
+      messageId: info.messageId,
+      accepted: info.accepted,
+      rejected: info.rejected,
+      response: info.response,
+    });
     return true;
   } catch (error) {
-    console.error("[leads] SMTP verzenden mislukt:", error);
+    console.error("[leads] SMTP verzenden mislukt:", {
+      to: payload.to,
+      subject: payload.subject,
+      ...formatSmtpError(error),
+    });
     return false;
   }
 }
 
-export async function sendCustomerConfirmation(lead: LeadPayload): Promise<void> {
+export async function sendCustomerConfirmation(lead: LeadPayload): Promise<boolean> {
   const text = `Beste ${lead.naam},
 
 Bedankt voor uw aanvraag. Ik neem zo snel mogelijk contact met u op — normaal gezien binnen de 24 uur.
@@ -70,7 +96,7 @@ Van Waes Schilderwerken
 ${BUSINESS.phoneDisplay}
 ${SITE_URL.replace(/^https?:\/\//, "")}`;
 
-  await sendMail({
+  return sendMail({
     fromName: "Van Waes Schilderwerken",
     to: lead.email,
     toName: lead.naam,
@@ -83,7 +109,7 @@ export async function sendOwnerNotification(
   lead: LeadPayload,
   analysis: GroqAnalysis | null,
   airtableUrl: string | null,
-): Promise<void> {
+): Promise<boolean> {
   const aiBlock = analysis
     ? `
 ── AI ANALYSE ──
@@ -111,7 +137,7 @@ Gemeente: ${lead.gemeente}
 Omschrijving: ${lead.omschrijving || "—"}
 ${aiBlock}${airtableLine}`;
 
-  await sendMail({
+  return sendMail({
     fromName: "Van Waes Website",
     to: BUSINESS.email,
     toName: "Van Waes Schilderwerken",

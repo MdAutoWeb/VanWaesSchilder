@@ -3,6 +3,8 @@ import { Poppins, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import CookieBanner from "./_components/CookieBanner";
+import Analytics from "./_components/Analytics";
 import { BUSINESS, SITE_DESCRIPTION, SITE_URL } from "./lib/site";
 
 const poppins = Poppins({
@@ -47,6 +49,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );

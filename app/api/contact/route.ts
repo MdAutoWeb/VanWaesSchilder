@@ -180,8 +180,19 @@ export async function POST(request: Request) {
         await patchLeadAnalysis(record.id, analysis);
       }
 
-      await sendCustomerConfirmation(lead);
-      await sendOwnerNotification(lead, analysis, record?.url ?? null);
+      const customerMailSent = await sendCustomerConfirmation(lead);
+      const ownerMailSent = await sendOwnerNotification(
+        lead,
+        analysis,
+        record?.url ?? null,
+      );
+
+      console.log("[leads] Mailresultaat:", {
+        customerMailSent,
+        ownerMailSent,
+        customerEmail: lead.email,
+        ownerEmail: "info@swvanwaes.be",
+      });
     }
   } catch (error) {
     console.error("[leads] Onverwachte fout:", error);
