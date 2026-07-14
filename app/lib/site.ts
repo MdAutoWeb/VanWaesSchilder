@@ -22,6 +22,19 @@ export const BUSINESS = {
 
 export const WEBAMO_URL = "https://webamo.be";
 
+export const SERVICE_AREAS = [
+  "Oostende",
+  "Bredene",
+  "Middelkerke",
+  "De Haan",
+  "Nieuwpoort",
+  "Koksijde",
+] as const;
+
+export function businessLogoUrl(): string {
+  return `${SITE_URL}/images/van-waes-logo.png`;
+}
+
 export const SOCIAL = {
   facebook:
     "https://www.facebook.com/profile.php?id=61587671488461&locale=nl_BE",

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import ContactFormVW from "../_components/ContactFormVW";
+import LocalBusinessSchema from "../_components/LocalBusinessSchema";
 import RevealObserver from "../_components/RevealObserver";
-import { BUSINESS } from "../lib/site";
+import { BUSINESS, SITE_DESCRIPTION } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Contact | Van Waes Schilderwerken",
@@ -12,6 +13,7 @@ export default function ContactPage() {
   return (
     <main>
       <RevealObserver />
+      <LocalBusinessSchema description={SITE_DESCRIPTION} />
 
       {/* Page hero */}
       <div className="page-hero">

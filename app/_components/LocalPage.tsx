@@ -13,14 +13,11 @@ interface LocalPageProps {
 }
 
 export default function LocalPage({ data }: LocalPageProps) {
-  const pageUrl = `/${data.slug}`;
-
   return (
     <main>
       <RevealObserver />
       <LocalBusinessSchema
         areaServed={data.areaServed}
-        pageUrl={pageUrl}
         description={data.metaDescription}
       />
       <FaqSchema items={data.faq} />

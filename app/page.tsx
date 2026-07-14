@@ -6,6 +6,7 @@ import SectionDivider from "./_components/SectionDivider";
 import HorizontalGallery from "./_components/HorizontalGallery";
 import RevealObserver from "./_components/RevealObserver";
 import LocalBusinessSchema from "./_components/LocalBusinessSchema";
+import { SERVICE_AREAS } from "./lib/site";
 
 export const metadata: Metadata = {
   title: "Van Waes Schilderwerken | Schilderwerken aan de kust",
@@ -45,14 +46,11 @@ const featuredReview = {
 };
 
 export default function HomePage() {
-  const areaServed = ["De kust", "Het polderland", "Uw regio"];
-
   return (
     <main id="top">
       <RevealObserver />
       <LocalBusinessSchema
-        areaServed={areaServed}
-        pageUrl="/"
+        areaServed={[...SERVICE_AREAS]}
         description={metadata.description as string}
       />
 
