@@ -27,7 +27,7 @@ export default function ImageSlot({
             src={src}
             alt={alt ?? placeholder}
             fill
-            sizes="(max-width: 720px) 195px, 250px"
+            sizes="(max-width: 720px) 50vw, (max-width: 1100px) 40vw, 520px"
             className={fit === "contain" ? "img-contain" : "img-cover"}
             style={{ objectPosition: position }}
             priority

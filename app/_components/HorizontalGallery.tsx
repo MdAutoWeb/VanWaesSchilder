@@ -4,14 +4,14 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const IMAGES = [
-  { src: "/images/image04.jpeg", alt: "Spuit- en lakwerk" },
-  { src: "/images/image6.jpeg", alt: "Schilderrealisatie Van Waes" },
-  { src: "/images/image7.jpeg", alt: "Schilderrealisatie Van Waes" },
-  { src: "/images/image8.jpeg", alt: "Binnenschilderwerk" },
-  { src: "/images/image9.jpeg", alt: "Schilderrealisatie Van Waes" },
-  { src: "/images/image10.jpeg", alt: "Schilderrealisatie Van Waes" },
-  { src: "/images/image11.jpeg", alt: "Schilderrealisatie Van Waes" },
-  { src: "/images/image12.jpeg", alt: "Schilderrealisatie Van Waes" },
+  { src: "/images/binnenschilderwerk/image04.jpeg", alt: "Spuit- en lakwerk" },
+  { src: "/images/decoratieve-technieken/image6.jpeg", alt: "Schilderrealisatie Van Waes" },
+  { src: "/images/decoratieve-technieken/image7.jpeg", alt: "Schilderrealisatie Van Waes" },
+  { src: "/images/binnenschilderwerk/image8.jpeg", alt: "Binnenschilderwerk" },
+  { src: "/images/binnenschilderwerk/image9.jpeg", alt: "Schilderrealisatie Van Waes" },
+  { src: "/images/binnenschilderwerk/image10.jpeg", alt: "Schilderrealisatie Van Waes" },
+  { src: "/images/decoratieve-technieken/image11.jpeg", alt: "Schilderrealisatie Van Waes" },
+  { src: "/images/binnenschilderwerk/image12.jpeg", alt: "Schilderrealisatie Van Waes" },
 ];
 
 export default function HorizontalGallery() {

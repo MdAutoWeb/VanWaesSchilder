@@ -5,17 +5,12 @@ import RevealObserver from "../_components/RevealObserver";
 import FaqAccordion from "../_components/FaqAccordion";
 import FaqSchema from "../_components/FaqSchema";
 import { homeFaq } from "../_data/faq-home";
+import { SERVICE_CATEGORIES, realisatiesHref } from "../_data/services";
 
 export const metadata: Metadata = {
   title: "Diensten | Van Waes Schilderwerken",
   description: "Binnenschilderwerk, buitenschilderwerk en decoratieve technieken. Ontdek het volledige aanbod.",
 };
-
-const diensten = [
-  { num: "01", title: "Binnenschilderwerk", desc: "Muren, plafonds, houtwerk en trappen, vlot en stofarm geschilderd in een bewoonde woning.", tags: ["Muren", "Plafonds", "Houtwerk"], src: "/images/image8.jpeg" },
-  { num: "02", title: "Buitenschilderwerk", desc: "Gevels, ramen en deuren bestand tegen de zeelucht. Inclusief herstel van houtrot en grondig voorbereiden.", tags: ["Gevels", "Ramen", "Houtrot"], src: "/images/buitenschilderwerk-nieuw.jpeg" },
-  { num: "03", title: "Decoratieve technieken", desc: "Betonciré, kalkverf, structuurverf en behang. Voor wie net dat tikkeltje extra karakter zoekt.", tags: ["Betonciré", "Kalkverf", "Behang"], src: "/images/image6.jpeg" },
-];
 
 export default function DienstenPage() {
   return (
@@ -35,8 +30,13 @@ export default function DienstenPage() {
       <section className="sec">
         <div className="container">
           <div className="svc-grid">
-            {diensten.map((svc, i) => (
-              <article key={svc.num} className="svc reveal" data-d={String(i + 1)}>
+            {SERVICE_CATEGORIES.map((svc, i) => (
+              <Link
+                key={svc.slug}
+                href={realisatiesHref(svc.slug)}
+                className="svc reveal"
+                data-d={String(i + 1)}
+              >
                 <div className="svc-img">
                   <span className="svc-num">{svc.num}</span>
                   <Image
@@ -54,7 +54,7 @@ export default function DienstenPage() {
                     {svc.tags.map((t) => <span key={t}>{t}</span>)}
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

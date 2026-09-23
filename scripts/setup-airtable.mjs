@@ -37,7 +37,6 @@ const tableDefinition = {
           { name: "Binnenschilderwerk" },
           { name: "Buitenschilderwerk" },
           { name: "Decoratieve technieken" },
-          { name: "Spuit- & lakwerk" },
           { name: "Andere" },
         ],
       },

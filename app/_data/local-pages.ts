@@ -61,15 +61,15 @@ export const bredenePage: LocalPageData = {
   ],
   images: [
     {
-      src: "/images/image1.jpeg",
+      src: "/images/binnenschilderwerk/image1.jpeg",
       alt: "Binnenschilderwerk in een rijwoning",
     },
     {
-      src: "/images/buitenschilderwerk-nieuw.jpeg",
+      src: "/images/buitenschilderwerk/buiten-1.jpeg",
       alt: "Buitenschilderwerk aan een voorgevel",
     },
     {
-      src: "/images/image5.jpeg",
+      src: "/images/binnenschilderwerk/image5.jpeg",
       alt: "Strak geschilderd houtwerk",
     },
   ],
@@ -139,15 +139,15 @@ export const middelkerkePage: LocalPageData = {
   ],
   images: [
     {
-      src: "/images/image6.jpeg",
+      src: "/images/decoratieve-technieken/image6.jpeg",
       alt: "Buitenschilderwerk aan een appartementsgebouw",
     },
     {
-      src: "/images/image08.jpeg",
+      src: "/images/binnenschilderwerk/image08.jpeg",
       alt: "Geschilderde voorgevel bestand tegen zeelucht",
     },
     {
-      src: "/images/image7.jpeg",
+      src: "/images/decoratieve-technieken/image7.jpeg",
       alt: "Binnenschilderwerk in een tweede verblijf",
     },
   ],
@@ -217,15 +217,15 @@ export const deHaanPage: LocalPageData = {
   ],
   images: [
     {
-      src: "/images/image3.jpeg",
+      src: "/images/decoratieve-technieken/image3.jpeg",
       alt: "Decoratieve afwerking in een villa",
     },
     {
-      src: "/images/image11.jpeg",
+      src: "/images/decoratieve-technieken/image11.jpeg",
       alt: "Totaalproject binnen- en buitenschilderwerk",
     },
     {
-      src: "/images/image4.jpeg",
+      src: "/images/binnenschilderwerk/image4.jpeg",
       alt: "Strak lakwerk op binnendeuren",
     },
   ],
@@ -302,15 +302,15 @@ export const oostendePage: LocalPageData = {
   ],
   images: [
     {
-      src: "/images/image8.jpeg",
+      src: "/images/binnenschilderwerk/image8.jpeg",
       alt: "Binnenschilderwerk in Oostende",
     },
     {
-      src: "/images/buitenschilderwerk-nieuw.jpeg",
+      src: "/images/buitenschilderwerk/buiten-1.jpeg",
       alt: "Buitenschilderwerk aan een voorgevel in Oostende",
     },
     {
-      src: "/images/image6.jpeg",
+      src: "/images/decoratieve-technieken/image6.jpeg",
       alt: "Decoratieve afwerking in Oostende",
     },
   ],

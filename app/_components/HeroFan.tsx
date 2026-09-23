@@ -9,7 +9,7 @@ const blades = [
     bcol: "var(--yellow)",
     placeholder: "Realisatie",
     z: 10,
-    src: "/images/image10.jpeg",
+    src: "/images/binnenschilderwerk/image10.jpeg",
     alt: "Schilderrealisatie Van Waes",
   },
   {
@@ -17,7 +17,7 @@ const blades = [
     bcol: "var(--orange)",
     placeholder: "Realisatie",
     z: 15,
-    src: "/images/image8.jpeg",
+    src: "/images/binnenschilderwerk/image8.jpeg",
     alt: "Schilderrealisatie Van Waes",
   },
   {
@@ -34,7 +34,7 @@ const blades = [
     bcol: "var(--orange)",
     placeholder: "Realisatie",
     z: 18,
-    src: "/images/image6.jpeg",
+    src: "/images/decoratieve-technieken/image6.jpeg",
     alt: "Schilderrealisatie Van Waes",
   },
   {
@@ -42,7 +42,7 @@ const blades = [
     bcol: "var(--yellow)",
     placeholder: "Realisatie",
     z: 12,
-    src: "/images/image12.jpeg",
+    src: "/images/binnenschilderwerk/image12.jpeg",
     alt: "Schilderrealisatie Van Waes",
   },
 ];

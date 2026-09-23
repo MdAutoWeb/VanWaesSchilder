@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import GalleryFilter from "../_components/GalleryFilter";
 import RevealObserver from "../_components/RevealObserver";
 
@@ -22,7 +23,9 @@ export default function RealisatiesPage() {
 
       <section className="sec">
         <div className="container container--gallery">
-          <GalleryFilter />
+          <Suspense fallback={<div className="gallery-filters-skeleton" aria-hidden="true" />}>
+            <GalleryFilter />
+          </Suspense>
         </div>
       </section>
     </main>

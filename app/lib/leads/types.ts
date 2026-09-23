@@ -1,7 +1,7 @@
+import { SERVICE_CATEGORIES } from "../../_data/services";
+
 export const WORK_TYPES = [
-  "Binnenschilderwerk",
-  "Buitenschilderwerk",
-  "Decoratieve technieken",
+  ...SERVICE_CATEGORIES.map((service) => service.title),
   "Andere",
 ] as const;
 
