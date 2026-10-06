@@ -21,11 +21,11 @@ export function buildLocalBusinessSchema({
   description = SITE_DESCRIPTION,
   areaServed,
 }: LocalBusinessSchemaInput = {}) {
-
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: BUSINESS.name,
+    legalName: BUSINESS.legalName,
     image: businessLogoUrl(),
     telephone: BUSINESS.phone,
     email: BUSINESS.email,

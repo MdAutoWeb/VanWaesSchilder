@@ -30,23 +30,25 @@ export default function PrivacybeleidPage() {
         <div className="container">
           <article className="legal-content reveal">
             <p className="legal-updated">
-              Laatst bijgewerkt: {new Date().toLocaleDateString("nl-BE")}
+              Laatst bijgewerkt: 6 oktober 2026
             </p>
 
             <p>
-              {BUSINESS.name} ({BUSINESS.vatDisplay}) respecteert uw privacy en
-              verwerkt persoonsgegevens conform de Algemene Verordening
+              {BUSINESS.legalName} ({BUSINESS.vatDisplay}) is de
+              verwerkingsverantwoordelijke en respecteert uw privacy. Wij
+              verwerken persoonsgegevens conform de Algemene Verordening
               Gegevensbescherming (AVG/GDPR) en de Belgische privacywetgeving.
             </p>
 
             <h2>1. Verantwoordelijke</h2>
             <p>
-              {BUSINESS.name}
+              {BUSINESS.legalName}
+              <br />
+              {BUSINESS.vatDisplay}
               <br />
               {BUSINESS.addressDisplay}
               <br />
-              E-mail:{" "}
-              <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
+              E-mail: <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
               <br />
               Telefoon:{" "}
               <a href={`tel:${BUSINESS.phone}`}>{BUSINESS.phoneDisplay}</a>
@@ -77,7 +79,9 @@ export default function PrivacybeleidPage() {
             <ul>
               <li>Het opvolgen van uw offerteaanvraag</li>
               <li>Contact opnemen over uw schilderproject</li>
-              <li>Het versturen van een bevestiging van uw aanvraag per e-mail</li>
+              <li>
+                Het versturen van een bevestiging van uw aanvraag per e-mail
+              </li>
               <li>Interne opvolging van leads en klantcontact</li>
             </ul>
             <p>
@@ -102,16 +106,16 @@ export default function PrivacybeleidPage() {
             </p>
             <p>
               Daarna worden uw gegevens verwijderd of geanonimiseerd, tenzij u
-              klant wordt — in dat geval gelden de wettelijke
-              administratieve bewaartermijnen.
+              klant wordt — in dat geval gelden de wettelijke administratieve
+              bewaartermijnen.
             </p>
 
             <h2>6. Delen met derden</h2>
             <p>
               Wij verkopen of verhuren uw gegevens niet aan derden. Uw gegevens
               worden niet gedeeld met externe partijen, behalve met de
-              onderstaande verwerkers die wij inschakelen om onze dienstverlening
-              mogelijk te maken:
+              onderstaande verwerkers die wij inschakelen om onze
+              dienstverlening mogelijk te maken:
             </p>
             <ul>
               <li>
@@ -119,13 +123,13 @@ export default function PrivacybeleidPage() {
                 contactaanvragen (CRM)
               </li>
               <li>
-                <strong>Groq</strong> — geautomatiseerde analyse van
-                aanvragen om interne opvolging te ondersteunen (prioriteit,
+                <strong>Groq</strong> — geautomatiseerde analyse van aanvragen
+                om interne opvolging te ondersteunen (prioriteit,
                 projectgrootte, suggesties voor opvolging)
               </li>
               <li>
-                <strong>CloudEmail</strong> — verzending van
-                bevestigingsmails en interne notificaties
+                <strong>CloudEmail</strong> — verzending van bevestigingsmails
+                en interne notificaties
               </li>
               <li>
                 <strong>Vercel</strong> — hosting van de website
@@ -139,14 +143,9 @@ export default function PrivacybeleidPage() {
 
             <h2>7. Cookies</h2>
             <p>
-              Onze website gebruikt enkel essentiële cookies die nodig zijn voor
-              het correct functioneren van de site. Niet-essentiële cookies,
-              zoals analytics, worden enkel geplaatst als u daarvoor toestemming
-              geeft via onze cookiebanner.
-            </p>
-            <p>
-              U kunt uw cookievoorkeur op elk moment wijzigen door uw
-              browsergegevens te wissen of contact met ons op te nemen.
+              Deze website gebruikt enkel noodzakelijke cookies die nodig zijn
+              voor het correct functioneren van de site. Wij plaatsen geen
+              analytics-, tracking- of andere niet-essentiële cookies.
             </p>
 
             <h2>8. Uw rechten</h2>
@@ -171,8 +170,8 @@ export default function PrivacybeleidPage() {
                 verwerkingen
               </li>
               <li>
-                <strong>Dataportabiliteit</strong> — uw gegevens in een
-                gangbaar formaat ontvangen
+                <strong>Dataportabiliteit</strong> — uw gegevens in een gangbaar
+                formaat ontvangen
               </li>
               <li>
                 <strong>Intrekking toestemming</strong> — eerder gegeven
